@@ -4,14 +4,14 @@
       <div class="cottages-card-left">
         <div class="cottages-blue-circle">
           <div class="cottages-text-block">
-            <div class="cottages-title">Найдите <span class="cottages-link">коттеджи</span><br>для следующей поездки</div>
-            <button class="cottages-btn">Узнать больше о домах и апартаментах</button>
+            <div class="cottages-title">Найдите <router-link to="/cottages" class="cottages-link">коттеджи</router-link><br>для следующей поездки</div>
+            <router-link to="/cottages" class="cottages-btn">Узнать больше о домах и апартаментах</router-link>
           </div>
         </div>
         <div class="cottages-yellow-dot"></div>
       </div>
       <div class="cottages-card-right">
-        <img class="cottages-illustration-img" src="@/assets/photos/divan2.png" alt="Диван" />
+        <img class="cottages-illustration-img" src="@/assets/photos/sofa2.png" alt="Диван" />
       </div>
     </div>
   </section>
@@ -103,6 +103,10 @@
   box-shadow: 0 2px 8px rgba(0,0,0,0.03);
   cursor: pointer;
   transition: background 0.2s, color 0.2s;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
 }
 .cottages-btn:hover {
   background: #e6f0ff;

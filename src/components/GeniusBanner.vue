@@ -5,16 +5,16 @@
         <div class="genius-card-title">Войдите в аккаунт и сэкономьте</div>
         <div class="genius-card-desc">Сэкономьте от 10% на вариантах жилья, отмеченных синим значком Genius.</div>
         <div class="genius-card-actions">
-          <button class="genius-btn genius-btn-primary">Войти</button>
-          <button class="genius-btn genius-btn-link">Зарегистрироваться</button>
+          <router-link to="/login" class="genius-btn genius-btn-primary">Войти</router-link>
+          <router-link to="/register" class="genius-btn genius-btn-link">Зарегистрироваться</router-link>
         </div>
       </div>
       <div class="genius-card-right">
-        <div class="genius-badge" @mouseenter="isShaking = true" @mouseleave="isShaking = false">
+        <router-link to="/genius" class="genius-badge" @mouseenter="isShaking = true" @mouseleave="isShaking = false">
           <span class="genius-badge-gift" :class="{ shake: isShaking }">
             <img src="@/assets/photos/gift.webp" alt="Gift icon" width="128" height="128">
           </span>
-        </div>
+        </router-link>
       </div>
     </div>
   </section>
@@ -75,6 +75,7 @@ const isShaking = ref(false)
   cursor: pointer;
   font-weight: 500;
   transition: background 0.2s, color 0.2s;
+  font-family: 'Inter', sans-serif;
 }
 .genius-btn-primary {
   background: #2563eb;

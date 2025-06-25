@@ -15,17 +15,20 @@
         </button>
       </div>
       <div class="directions-cards">
-        <div
+        <router-link
           v-for="item in directions[activeTab]"
           :key="item.title"
-          class="direction-card"
+          :to="item.link"
+          class="direction-card-link"
         >
-          <div class="direction-img" :style="{ backgroundImage: `url('${item.img || 'https://placehold.co/400x256?text=Direction'}` }"></div>
-          <div class="direction-info">
-            <div class="direction-title">{{ item.title }}</div>
-            <div class="direction-distance">{{ item.distance }}</div>
+          <div class="direction-card">
+            <div class="direction-img" :style="{ backgroundImage: `url('${item.img || 'https://placehold.co/400x256?text=Direction'}` }"></div>
+            <div class="direction-info">
+              <div class="direction-title">{{ item.title }}</div>
+              <div class="direction-distance">{{ item.distance }}</div>
+            </div>
           </div>
-        </div>
+        </router-link>
       </div>
     </div>
   </section>
@@ -46,34 +49,34 @@ const tabs = [
 
 const directions = {
   city: [
-    { title: 'Сан-Луис-Обиспо', distance: '260 км от города Лос-Анджелес', img: '' },
-    { title: 'Санта-Фе', distance: '1 136 км от города Лос-Анджелес', img: '' },
-    { title: 'Cozad', distance: '1776 км от города Лос-Анджелес', img: '' },
-    { title: 'Спрингфилд', distance: '2 609 км от города Лос-Анджелес', img: '' },
-    { title: 'Берег', distance: '3 069 км от города Лос-Анджелес', img: '' },
-    { title: 'Уинчестер', distance: '3 593 км от города Лос-Анджелес', img: '' },
+    { title: 'Сан-Луис-Обиспо', distance: '260 км от города Лос-Анджелес', img: '', link: '/destination/san-luis-obispo' },
+    { title: 'Санта-Фе', distance: '1 136 км от города Лос-Анджелес', img: '', link: '/destination/santa-fe' },
+    { title: 'Cozad', distance: '1776 км от города Лос-Анджелес', img: '', link: '/destination/cozad' },
+    { title: 'Спрингфилд', distance: '2 609 км от города Лос-Анджелес', img: '', link: '/destination/springfield' },
+    { title: 'Берег', distance: '3 069 км от города Лос-Анджелес', img: '', link: '/destination/bereg' },
+    { title: 'Уинчестер', distance: '3 593 км от города Лос-Анджелес', img: '', link: '/destination/winchester' },
   ],
   beach: [
-    { title: 'Майами-Бич', distance: '3 800 км от города Лос-Анджелес', img: '' },
-    { title: 'Санта-Моника', distance: '24 км от города Лос-Анджелес', img: '' },
-    { title: 'Лагуна-Бич', distance: '80 км от города Лос-Анджелес', img: '' },
+    { title: 'Майами-Бич', distance: '3 800 км от города Лос-Анджелес', img: '', link: '/destination/miami-beach' },
+    { title: 'Санта-Моника', distance: '24 км от города Лос-Анджелес', img: '', link: '/destination/santa-monica' },
+    { title: 'Лагуна-Бич', distance: '80 км от города Лос-Анджелес', img: '', link: '/destination/laguna-beach' },
   ],
   ski: [
-    { title: 'Аспен', distance: '1 400 км от города Лос-Анджелес', img: '' },
-    { title: 'Вейл', distance: '1 500 км от города Лос-Анджелес', img: '' },
+    { title: 'Аспен', distance: '1 400 км от города Лос-Анджелес', img: '', link: '/destination/aspen' },
+    { title: 'Вейл', distance: '1 500 км от города Лос-Анджелес', img: '', link: '/destination/vail' },
   ],
   nature: [
-    { title: 'Йосемити', distance: '500 км от города Лос-Анджелес', img: '' },
-    { title: 'Секвойя', distance: '350 км от города Лос-Анджелес', img: '' },
+    { title: 'Йосемити', distance: '500 км от города Лос-Анджелес', img: '', link: '/destination/yosemite' },
+    { title: 'Секвойя', distance: '350 км от города Лос-Анджелес', img: '', link: '/destination/sequoia' },
   ],
   relax: [
-    { title: 'Палм-Спрингс', distance: '170 км от города Лос-Анджелес', img: '' },
+    { title: 'Палм-Спрингс', distance: '170 км от города Лос-Анджелес', img: '', link: '/destination/palm-springs' },
   ],
   romantic: [
-    { title: 'Сонома', distance: '650 км от города Лос-Анджелес', img: '' },
+    { title: 'Сонома', distance: '650 км от города Лос-Анджелес', img: '', link: '/destination/sonoma' },
   ],
   food: [
-    { title: 'Сан-Франциско', distance: '600 км от города Лос-Анджелес', img: '' },
+    { title: 'Сан-Франциско', distance: '600 км от города Лос-Анджелес', img: '', link: '/destination/san-francisco' },
   ],
 }
 
@@ -151,6 +154,11 @@ const activeTab = ref('city')
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: stretch;
+}
+.direction-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
 }
 .direction-card {
   /* background: #fff; */

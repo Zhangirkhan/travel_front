@@ -2,43 +2,54 @@
   <section class="accommodation-types-section">
     <h2 class="accommodation-title">Поиск по типу размещения в городе Лос-Анджелес</h2>
     <div class="accommodation-list">
-      <div v-for="item in items" :key="item.title" class="accommodation-card">
-        <div class="acc-img" :style="{ backgroundImage: `url('${item.img}')` }"></div>
-        <div class="acc-info">
-          <div class="acc-title">{{ item.title }}</div>
-          <div class="acc-count">{{ item.count }}</div>
+      <router-link 
+        v-for="item in items" 
+        :key="item.title" 
+        :to="item.link" 
+        class="accommodation-card-link"
+      >
+        <div class="accommodation-card">
+          <div class="acc-img" :style="{ backgroundImage: `url('${item.img}')` }"></div>
+          <div class="acc-info">
+            <div class="acc-title">{{ item.title }}</div>
+            <div class="acc-count">{{ item.count }}</div>
+          </div>
         </div>
-      </div>
+      </router-link>
     </div>
   </section>
 </template>
 
 <script setup>
-import oteliImg from '@/assets/photos/Отели.png'
-import apartImg from '@/assets/photos/Апартаменты.png'
-import resortImg from '@/assets/photos/Курортные отели.png'
-import villaImg from '@/assets/photos/Виллы.png'
+import oteliImg from '@/assets/photos/hotels.png'
+import apartImg from '@/assets/photos/apartments.png'
+import resortImg from '@/assets/photos/resort-hotels.png'
+import villaImg from '@/assets/photos/villas.png'
 
 const items = [
   {
     title: 'Отели',
     count: '301 вариант',
     img: oteliImg,
+    link: '/hotels'
   },
   {
     title: 'Апартаменты/квартиры',
     count: '410 вариант',
     img: apartImg,
+    link: '/apartments'
   },
   {
     title: 'Курортные отели',
     count: '155 вариант',
     img: resortImg,
+    link: '/resort-hotels'
   },
   {
     title: 'Виллы',
     count: '25 вариант',
     img: villaImg,
+    link: '/villas'
   },
 ]
 </script>
@@ -60,7 +71,7 @@ const items = [
   font-size: 1.5rem;
   font-weight: 700;
   text-align: left;
-  margin-bottom: 40px;
+  margin-bottom: 10px;
   color: #18181b;
 }
 .accommodation-list {
@@ -71,6 +82,11 @@ const items = [
   flex-wrap: wrap;
   max-width: 1400px;
   margin: 0 auto;
+}
+.accommodation-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
 }
 .accommodation-card {
   background: #fff;

@@ -75,7 +75,7 @@ import 'flatpickr/dist/flatpickr.min.css'
 import { Russian } from 'flatpickr/dist/l10n/ru.js'
 import LocationIcon from '@/assets/svg/Location.svg?raw'
 import CalendarIcon from '@/assets/svg/Calendar.svg?raw'
-import UserIcon from '@/assets/svg/2 User.svg?raw'
+import UserIcon from '@/assets/svg/users.svg?raw'
 import CloseIcon from '@/assets/svg/close.svg?raw'
 import SearchIcon from '@/assets/svg/search-normal.svg?raw'
 
@@ -173,9 +173,6 @@ const flatpickrConfig = {
   altInput: false,
   static: false,
   position: 'auto',
-  onReady: (selectedDates, dateStr, instance) => {
-    instance.open()
-  },
   onChange: (selectedDates, dateStr, instance) => {
     if (selectedDates.length === 1) {
       dateValue.value = [selectedDates[0]]
@@ -315,6 +312,7 @@ onBeforeUnmount(() => {
   transition: background 0.2s;
   right: 0;
   top: 0;
+  font-family: 'Inter', sans-serif;
 }
 .search-btn:hover {
   background: #1746b3;
@@ -397,6 +395,7 @@ onBeforeUnmount(() => {
   display: flex;
   align-items: center;
   justify-content: center;
+  font-family: 'Inter', sans-serif;
 }
 .guests-btn:disabled {
   background: #f3f3f3;
