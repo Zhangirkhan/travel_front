@@ -73,11 +73,11 @@ import { ref, computed, onMounted, onBeforeUnmount } from 'vue'
 import FlatPickr from 'vue-flatpickr-component'
 import 'flatpickr/dist/flatpickr.min.css'
 import { Russian } from 'flatpickr/dist/l10n/ru.js'
-import LocationIcon from '@/assets/svg/Location.svg?raw'
-import CalendarIcon from '@/assets/svg/Calendar.svg?raw'
-import UserIcon from '@/assets/svg/users.svg?raw'
+import LocationIcon from '@/assets/svg/location.svg?raw'
+import CalendarIcon from '@/assets/svg/calendar.svg?raw'
+import UserIcon from '@/assets/svg/user.svg?raw'
 import CloseIcon from '@/assets/svg/close.svg?raw'
-import SearchIcon from '@/assets/svg/search-normal.svg?raw'
+import SearchIcon from '@/assets/svg/search.svg?raw'
 
 const cities = [
   'Пекин, Китай',
